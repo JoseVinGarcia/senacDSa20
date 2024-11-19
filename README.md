@@ -1,0 +1,1 @@
+Aula 20 do curso de Análise de Dados do SENAC.
