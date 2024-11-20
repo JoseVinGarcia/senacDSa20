@@ -34,3 +34,11 @@ print(f"Distância entre a variância e a média: {distancia_var_media}")
 # Coeficiente de variação
 coef_variacao = (dp2_dados / md_dados) * 100
 print(f"Coeficiente de variação: {coef_variacao}")
+
+# Calcula a variancia DO CALCULO DE AMOSTRA
+var_a_dados = np.var(conjunto_dados, ddof=1)
+print(f"Variância amostral da série de dados: {var_a_dados}")
+
+# Desvio padrão AMOSTRAL
+dpa_dados = np.std(conjunto_dados, ddof=1)
+print(f"Desvio padrão amostral da série de dados: {dpa_dados}")
