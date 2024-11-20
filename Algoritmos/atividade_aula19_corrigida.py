@@ -67,14 +67,33 @@ try:
     df_vendasprodutos_outinf = df_vendasprodutos[df_vendasprodutos["Valor Total"] < limite_inferior]
     df_vendasprodutosoutsup = df_vendasprodutos[df_vendasprodutos["Valor Total"] > limite_superior]
 
+    # Calculando medidas (Da aula 20)
+    variancia_vendas = np.var(array_produtos_vendidos)
+    dp_vendas = np.std(array_produtos_vendidos)
+    dist_vendas = variancia_vendas / (media_produtos_vendidos ** 2)
+    coef_vendas = (dp_vendas / media_produtos_vendidos)*  100
 
     # Prints
     print(f"\nMedidas de Tendência Central")
     print(f"Média do Valor Total: {media_produtos_vendidos}")
     print(f"Mediana do Valor Total: {mediana_produtos_vendidos}")
     print(f"Distância: {distancia}%")
+    print(f"Máximo: {maximo}")
+    print(f"Mínimo: {minimo}")
+    print(f"Amplitude: {amplitude}")
+    print(f"Q1: {q1}")
+    print(f"Q3: {q3}")
+    print(f"IQR: {iqr}")
+    print(f"Limite inferior: {limite_inferior}")
+    print(f"Limite superior: {limite_superior}")
 
+    # Medidas da aula 20:
+    print(f"Variância das vendas: {variancia_vendas}")
+    print(f"Desvio padrão das vendas: {dp_vendas}")
+    print(f"Distância entre variância e média: {dist_vendas}")
+    print(f"Coeficiente de variação: {coef_vendas}")
 
+    # Calculando Outliers
     if len(df_vendasprodutos_outinf) == 0:
         print("\nNÃO EXISTEM OUTLIERS INFERIORES")
     else:
